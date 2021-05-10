@@ -6,20 +6,18 @@ export class Inputkeys extends Component {
     return (
       <div name='calc' className='container'>
         <h1>Calculator</h1>
-        <input
+        <div
           placeholder='Enter your expression'
           className='input-area'
           id='text'
-          name='txt'
-          readOnly=''
           onChange={this.handleChange}
-        ></input>
+        ></div>
         <div id='answer' className='solution'></div>
         <form className='wrapper'>
           <div
             className='btn'
             onClick={() => {
-              document.getElementById('text').value += '1';
+              document.getElementById('text').innerText += '1';
             }}
           >
             1
@@ -27,7 +25,7 @@ export class Inputkeys extends Component {
           <div
             className='btn'
             onClick={() => {
-              document.getElementById('text').value += '2';
+              document.getElementById('text').innerText += '2';
             }}
           >
             2
@@ -35,7 +33,7 @@ export class Inputkeys extends Component {
           <div
             className='btn'
             onClick={() => {
-              document.getElementById('text').value += '3';
+              document.getElementById('text').innerText += '3';
             }}
           >
             3
@@ -43,7 +41,7 @@ export class Inputkeys extends Component {
           <div
             className='btn operator'
             onClick={() => {
-              document.getElementById('text').value += '+';
+              document.getElementById('text').innerText += '+';
             }}
           >
             +
@@ -51,7 +49,7 @@ export class Inputkeys extends Component {
           <div
             className='btn'
             onClick={() => {
-              document.getElementById('text').value += '4';
+              document.getElementById('text').innerText += '4';
             }}
           >
             4
@@ -59,7 +57,7 @@ export class Inputkeys extends Component {
           <div
             className='btn'
             onClick={() => {
-              document.getElementById('text').value += '5';
+              document.getElementById('text').innerText += '5';
             }}
           >
             5
@@ -67,7 +65,7 @@ export class Inputkeys extends Component {
           <div
             className='btn'
             onClick={() => {
-              document.getElementById('text').value += '6';
+              document.getElementById('text').innerText += '6';
             }}
           >
             6
@@ -75,7 +73,7 @@ export class Inputkeys extends Component {
           <div
             className='btn operator'
             onClick={() => {
-              document.getElementById('text').value += '-';
+              document.getElementById('text').innerText += '-';
             }}
           >
             -
@@ -83,7 +81,7 @@ export class Inputkeys extends Component {
           <div
             className='btn'
             onClick={() => {
-              document.getElementById('text').value += '7';
+              document.getElementById('text').innerText += '7';
             }}
           >
             7
@@ -91,7 +89,7 @@ export class Inputkeys extends Component {
           <div
             className='btn'
             onClick={() => {
-              document.getElementById('text').value += '8';
+              document.getElementById('text').innerText += '8';
             }}
           >
             8
@@ -99,7 +97,7 @@ export class Inputkeys extends Component {
           <div
             className='btn'
             onClick={() => {
-              document.getElementById('text').value += '9';
+              document.getElementById('text').innerText += '9';
             }}
           >
             9
@@ -107,7 +105,7 @@ export class Inputkeys extends Component {
           <div
             className='btn operator'
             onClick={() => {
-              document.getElementById('text').value += '*';
+              document.getElementById('text').innerText += '*';
             }}
           >
             x
@@ -115,8 +113,8 @@ export class Inputkeys extends Component {
           <div
             className='btn back'
             onClick={() => {
-              let str = document.getElementById('text').value;
-              document.getElementById('text').value = str.slice(
+              let str = document.getElementById('text').innerText;
+              document.getElementById('text').innerText = str.slice(
                 0,
                 str.length - 1
               );
@@ -127,7 +125,7 @@ export class Inputkeys extends Component {
           <div
             className='btn'
             onClick={() => {
-              let str = document.getElementById('text').value;
+              let str = document.getElementById('text').innerText;
               let preStr = str[str.length - 1];
               if (
                 str.length != 0 &&
@@ -139,7 +137,7 @@ export class Inputkeys extends Component {
                 preStr != '(' &&
                 preStr != ')'
               ) {
-                document.getElementById('text').value += '0';
+                document.getElementById('text').innerText += '0';
               }
             }}
           >
@@ -148,7 +146,7 @@ export class Inputkeys extends Component {
           <div
             className='btn clear'
             onClick={() => {
-              document.getElementById('text').value = '';
+              document.getElementById('text').innerText = '';
               document.getElementById('answer').innerText = '';
             }}
           >
@@ -157,7 +155,7 @@ export class Inputkeys extends Component {
           <div
             className='btn operator'
             onClick={() => {
-              document.getElementById('text').value += '/';
+              document.getElementById('text').innerText += '/';
             }}
           >
             /
@@ -165,7 +163,7 @@ export class Inputkeys extends Component {
           <div
             className='btn operator'
             onClick={() => {
-              document.getElementById('text').value += '(';
+              document.getElementById('text').innerText += '(';
             }}
           >
             (
@@ -173,7 +171,7 @@ export class Inputkeys extends Component {
           <div
             className='btn operator'
             onClick={() => {
-              document.getElementById('text').value += ')';
+              document.getElementById('text').innerText += ')';
             }}
           >
             )
@@ -182,7 +180,9 @@ export class Inputkeys extends Component {
             className='btn answer_key'
             onClick={() => {
               try {
-                var calculatedAns = eval(document.getElementById('text').value);
+                var calculatedAns = eval(
+                  document.getElementById('text').innerText
+                );
                 console.log(calculatedAns);
                 document.getElementById('answer').innerHTML = calculatedAns;
               } catch (err) {
@@ -196,7 +196,7 @@ export class Inputkeys extends Component {
           <div
             className='btn operator'
             onClick={() => {
-              document.getElementById('text').value += '%';
+              document.getElementById('text').innerText += '%';
             }}
           >
             %
