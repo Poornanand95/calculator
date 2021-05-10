@@ -95,7 +95,12 @@ h1 {
 
 .operator {
     font-size: 1.25rem;
+    background-color: rgb(136, 127, 127);
     
+}
+.back, .clear{
+    background-color: rgb(136, 127, 127);
+
 }
 .answer_key{
     background-color: #fff;

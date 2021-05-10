@@ -113,7 +113,7 @@ export class Inputkeys extends Component {
             x
           </div>
           <div
-            className='btn'
+            className='btn back'
             onClick={() => {
               let str = document.getElementById('text').value;
               document.getElementById('text').value = str.slice(
@@ -146,7 +146,7 @@ export class Inputkeys extends Component {
             0
           </div>
           <div
-            className='btn'
+            className='btn clear'
             onClick={() => {
               document.getElementById('text').value = '';
               document.getElementById('answer').innerText = '';
