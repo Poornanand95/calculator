@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+
+
 html {
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -23,25 +28,30 @@ h1 {
 
 .input-area {
     border: none;
-    border-radius: 1rem;
+    border-radius: 1rem 1rem 0 0;
     min-width: 15rem;
     height: .5rem;
     padding: 1rem;
     margin-top: .5rem;
     background-color: rgb(230, 222, 222);
     box-shadow: 0px 2px 2px 1px #5e5a5a;
+    margin-bottom: 0;
 }
 
 
 
 .solution {
-    border-radius: 1rem;
-    min-width: 17rem;
-    height: 3rem;
-    margin-top: .5rem;
+    border-radius: 0 0 1rem 1rem;
+    min-width: 15rem;
+    height: .5rem;
+    padding: 1rem;
+    margin-top: 0rem;
     background-color: rgb(230, 222, 222);
     box-shadow: 0px 2px 2px 1px #5e5a5a;
-    line-height: 3rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    
 }
 
 
@@ -71,6 +81,9 @@ h1 {
     height: 3rem;
     border: none;
     box-shadow: 0px 2px 2px 1px #7e7777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -78,4 +91,19 @@ h1 {
     background-color: rgb(199, 186, 186);
     color: rgb(124, 118, 118);
     cursor: pointer;
+}
+
+.operator {
+    font-size: 1.25rem;
+    
+}
+.answer_key{
+    background-color: #fff;
+    color: gray;
+    font-size: 1.5rem;
+}
+.answer_key:hover{
+    background-color: rgb(167, 154, 154);
+    color: rgb(241, 239, 239);
+    font-size: 1.5rem;
 }
